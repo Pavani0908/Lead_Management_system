@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard · LMS{% endblock %}
+{% block page_id %}dashboard{% endblock %}
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-4">
+  <div>
+    <h1 class="h3 mb-1">Lead dashboard</h1>
+    <p class="text-muted mb-0 small">Manage and track customer leads efficiently.</p>
+  </div>
+  <a href="{{ url_for('index') }}" class="btn btn-outline-primary btn-sm">New submission</a>
+</div>
+
+<div id="dashAlert" class="alert d-none" role="alert"></div>
+
+<div class="card shadow-sm border-0 mb-4">
+  <div class="card-body">
+    <div class="row g-3 align-items-end">
+      <div class="col-md-6">
+        <label for="searchInput" class="form-label">Search</label>
+        <input
+          type="search"
+          class="form-control"
+          id="searchInput"
+          placeholder="Name, email, phone, business type, message…"
+          autocomplete="off"
+        />
+      </div>
+      <div class="col-md-4">
+        <label for="statusFilter" class="form-label">Status filter</label>
+        <select class="form-select" id="statusFilter">
+          <option value="">All statuses</option>
+          <option>New</option>
+          <option>Contacted</option>
+          <option>Closed</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-secondary w-100" id="refreshBtn">Refresh</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card shadow-sm border-0">
+  <div class="card-body p-0">
+    <div class="table-responsive">
+      <table class="table table-hover table-striped mb-0 align-middle">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Business</th>
+            <th scope="col">Status</th>
+            <th scope="col">Created</th>
+            <th scope="col" class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="leadsTableBody">
+          <tr id="leadsLoadingRow">
+            <td colspan="8" class="text-center text-muted py-5">Loading leads…</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer bg-white small text-muted" id="leadsMeta"></div>
+</div>
+{% endblock %}

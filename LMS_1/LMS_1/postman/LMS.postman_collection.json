@@ -1,0 +1,44 @@
+{
+  "info": {
+    "name": "LMS Lead API",
+    "description": "Lead Management System — Flask REST API for local testing and demos.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://127.0.0.1:5000" }
+  ],
+  "item": [
+    {
+      "name": "Create lead",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ada Lovelace\",\n  \"email\": \"ada@example.com\",\n  \"phone\": \"+1 (555) 010-2030\",\n  \"business_type\": \"Technology\",\n  \"message\": \"Interested in a demo of your LMS.\"\n}"
+        },
+        "url": "{{baseUrl}}/api/leads"
+      }
+    },
+    {
+      "name": "List leads",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/leads?q=&status="
+      }
+    },
+    {
+      "name": "Update lead status",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Contacted\"\n}"
+        },
+        "url": "{{baseUrl}}/api/leads/1"
+      }
+    }
+  ]
+}

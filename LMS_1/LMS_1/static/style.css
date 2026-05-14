@@ -1,0 +1,39 @@
+/**
+ * LMS — shared styles on top of Bootstrap 5
+ */
+
+:root {
+  --lms-radius: 0.5rem;
+}
+
+.card {
+  border-radius: var(--lms-radius);
+}
+
+.table thead th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+.table td {
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+#autoReplyBox {
+  border-radius: var(--lms-radius);
+}
+
+.navbar-brand {
+  letter-spacing: 0.02em;
+}
+
+/* Slightly tighter alerts on mobile */
+@media (max-width: 576px) {
+  .table {
+    font-size: 0.85rem;
+  }
+}
