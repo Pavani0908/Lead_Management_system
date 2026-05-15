@@ -11,6 +11,21 @@ A simple **Lead Management System** developed using Flask, SQLAlchemy, SQLite, B
 - **Automatic reply** text returned after each successful submission (plus an **OpenAI placeholder** in `app.py` for optional future integration).
 - **Gunicorn**-ready entry point for **Render** (or any WSGI host).
 
+## Authentication
+
+This project uses a simple authentication system built with Flask.
+
+Users can log in to access the dashboard using the following credentials:
+
+```text
+Username: admin
+Password: admin123
+```
+
+When the login is successful, a user session is created and the user is redirected to the dashboard.
+
+This authentication setup is created for learning and demonstration purposes. Currently, the username and password are hardcoded. In a production-level application, authentication should be implemented using a database, hashed passwords, and secure session management.
+
 ## Project layout
 
 ```text
