@@ -2,6 +2,9 @@
 {% block title %}Admin Dashboard · LMS{% endblock %}
 {% block page_id %}dashboard{% endblock %}
 {% block content %}
+<a href="{{ url_for('logout') }}">
+    Logout
+</a>
 <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-4">
   <div>
     <h1 class="h3 mb-1">Lead dashboard</h1>
